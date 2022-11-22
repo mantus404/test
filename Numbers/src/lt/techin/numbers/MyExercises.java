@@ -7,6 +7,7 @@ import lt.itakademija.exam.NumberFilter;
 import java.util.*;
 
 public class MyExercises implements Exercises {
+
     @Override
     public Integer findSmallest(List<Integer> list) {
         return list.stream().min(Integer::compare).get();
@@ -85,6 +86,6 @@ public class MyExercises implements Exercises {
 
     @Override
     public IntegerGenerator createFilteredIntegerGenerator(IntegerGenerator integerGenerator, NumberFilter numberFilter) {
-        return null;
+        return new MyIntegerGenerator(integerGenerator, numberFilter);
     }
 }
